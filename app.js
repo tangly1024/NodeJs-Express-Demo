@@ -108,7 +108,8 @@ app.get(
 
 app.use('/birds', birds)
 
-app.use(express.static('public'))
+// app.use(express.static('public'))
+app.use('/static', express.static('public'))
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
