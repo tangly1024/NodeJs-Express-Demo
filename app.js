@@ -1,6 +1,7 @@
 var express = require("express");
 const res = require("express/lib/response");
 const req = require("express/lib/request");
+var birds = require('./birds')
 
 var app = express();
 
@@ -104,6 +105,8 @@ app.get(
     res.send("Hello from D!");
   }
 );
+
+app.use('/birds', birds)
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
